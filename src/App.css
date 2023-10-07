@@ -1,0 +1,184 @@
+/* Theme Colors */
+/* Replace with the actual color values */
+:root {
+  --primary: #be8040;
+  --dark: #303030;
+  --beige: #e5e3d6;
+}
+
+/* Rounded corners disabled */
+/* .rounded classes are not used */
+
+/* Body Styles */
+body {
+  padding-top: 1px;
+  font-family: "Abhaya Libre";
+}
+
+/* Images */
+img {
+  max-width: 100%;
+}
+
+/* Navbar Styles */
+
+.navbar-box {
+  display: inline-block;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;  
+  color: white;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+  border-bottom: double medium var(--beige);
+}
+
+.hero2{
+  width: 50%;
+  position: relative;
+  height: 100%;
+  margin-top: -10%;
+}
+
+.container-fluid2{ 
+  position: absolute;
+ padding-top: -20%;
+  padding-left: 25%;
+}
+
+
+
+.navbar-ul {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 20px;  
+  padding: 10px; 
+}
+
+.navbar .navbar-brand img {
+  max-height: 45px;
+  margin-right: 20px;
+}
+
+/* Main Content Styles */
+.maincontent {
+  border: double medium var(--beige);
+  border-top: 0;
+  margin: 0 30px;
+  overflow: hidden;
+  flex-direction: row;
+  margin-top: 0%;
+}
+
+/* Margin-top 50px class */
+.mt-50 {
+  margin-top: 50px;
+}
+
+/* Media Query Styles */
+@media (min-width: 768px) {
+  .h-md-100 {
+    height: 100vh;
+  }
+}
+
+/* Article Styles */
+.article {
+  font-size: 1.4rem;
+}
+
+.article p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Featured Image Styles */
+.featured-img {
+  text-align: center;
+  margin-left: -200%;
+  width: 500%;
+  height: 300%;
+}
+
+/* Navbar Toggler Styles */
+.navbar-light .navbar-toggler {
+  border-color: var(--beige);
+}
+
+/* Link */
+.nav-link {
+  text-decoration: none; 
+  color: #979494; 
+  font-family: inherit;
+  transition: color 0.2s; 
+}
+
+.nav-link-first {
+  text-decoration: none; 
+  color: rgb(105, 104, 104);  
+  font-family: inherit;
+  transition: color 0.2s; 
+}
+
+.nav-link:hover {
+  color: rgb(105, 104, 104); 
+}
+
+
+.active{
+  color: black;
+  font-weight: bold;
+}
+
+/* Add these styles to your CSS file */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width : 768px) {
+  .modal{
+    left: 10%;
+    width: 80%;
+    top: 8%;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close {
+  font-size: 24px;
+  cursor: pointer;
+}

@@ -1,0 +1,90 @@
+/* OrderPage.css */
+
+.order-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: url("https://c0.wallpaperflare.com/preview/245/481/204/bakery-signage-at-night.jpg");
+    background-color: rgba(240, 240, 240, 0.5); /* Background color with 50% opacity */
+  
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .image-icon-image{
+    width: 20%;
+    height: 20%;
+    margin-left: 40%;
+  }
+
+  @media screen and(max-width:768px) {
+    .image-icon-image{
+      margin-left: -40%;
+    }
+  }
+  .order-item {
+    display: flex;
+    flex-direction: column; /* Stack items on small screens */
+    margin: 20px 0;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-image img {
+    
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .order-details {
+    text-align: left;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+
+    .order-page{
+        width: 90%;
+        height: auto;
+        margin-left: 6%;
+        font-size: small !important;
+    }
+    .order-item {
+      flex-direction: column; /* Display items side by side on larger screens */
+      align-items: center;
+    }
+  
+    .order-image img {
+      width: 200%;
+      height: 200%;
+      margin-right: 10px;
+    }
+
+    .order-details {
+      font-size: smaller !important;
+    }
+    
+  }
+  

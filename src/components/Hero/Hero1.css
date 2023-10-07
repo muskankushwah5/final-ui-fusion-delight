@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap');
+
+.hero1 {
+  min-height: 50vh;
+  padding: 50px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+}
+
+
+
+.hero1 h1 {
+  font-family: "Bungee Inline";
+  font-size: 6rem; /* Adjust the font size as needed */
+  -webkit-text-stroke: 0.01px rgb(36, 36, 36);
+  color: transparent; /* Make text transparent */
+  text-shadow: 0 0 5px white, 0 0 10px white;
+  width: 100%; /* Adjust the width as needed */
+  white-space: nowrap; /* Prevent text from wrapping */
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+/* Add CSS to create white lines above and below the link */
+.hero1 a {
+  text-align: center;
+  display: block; /* Make the link a block-level element */
+  color: black; /* Set the text color to black */
+  padding: 1px; /* Add padding to adjust the spacing between lines and link */
+  text-decoration: none; /* Remove underline from link */
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.hero1 .lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Style the lines */
+.hero1 .line {
+  height: 1px;
+  width: 200px;
+  background-color: white;
+}
+
+.hero1 p {
+  text-align: center; /* Remove the margin to center-align the text within the lines */
+  margin-top: -5%;
+  margin-bottom: 70px;
+  font-size: 1.4rem; 
+}
+
+.hero1 .btn-text {
+  font-size: 1.5rem;
+}
+
+.hero1 .btn-text:hover {
+  text-decoration: none;
+}
+
+
+
+.block.hero1 {
+  /* Add your background image properties here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 66vh; 
+  position: relative;
+}
+
+.container-fluid.text-center {
+  text-align: center; /* Horizontally center the content */
+  position: absolute; /* Set position to absolute */
+  top: 50%; /* Move the container down by 50% of its own height */
+  left: 50%; /* Move the container right by 50% of its own width */
+  top: 30%;
+  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+}
+
+.container-fluid.text-center h1,
+.container-fluid.text-center p,
+.container-fluid.text-center a {
+  color: white; /* Set the text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for readability */
+}
+
+/* Your existing CSS */
+
+/* Mobile responsiveness */
+@media (max-width: 575.98px) {
+  .hero1 {
+    min-height: auto;
+    padding: 20px 0; /* Reduce padding for smaller screens */
+    background-size: cover; /* Ensure background image covers the entire width */
+  }
+
+  .hero1 h1 {
+    font-size: 3rem; /* Adjust font size for smaller screens */
+    white-space: normal; /* Allow text to wrap */
+  }
+
+  .hero1 p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    margin-bottom: 20px; /* Reduce margin-bottom for smaller screens */
+  }
+
+  .hero1 .btn-text {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 8px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .container-fluid.text-center {
+    top: 50%; /* Center the container vertically for smaller screens */
+  }
+}
+
+@media (min-width: 576px) {
+  .hero1 {
+    min-height: 50vh;
+    padding: 50px 0;
+  }
+
+  .hero1 h1 {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1000px) {
+  .hero1 {
+    min-height: 50vh;
+    padding: 50px 0;
+  }
+
+  .hero1 h1 {
+    font-size: 6rem;
+  }
+}

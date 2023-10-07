@@ -1,0 +1,28 @@
+.footer1 {
+    padding: 30px 0;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  
+  .footer1 p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cart-box{
+    margin-top: 90%;
+    position: fixed; 
+    background: inherit; 
+    z-index: 999;}
+
+  
+
+.copyright {
+  margin-left: 40%;
+  font-size: 100%;
+}
+
+@media (max-width: 768px) {
+  .copyright {
+    margin-left: 20%;
+  }
+}

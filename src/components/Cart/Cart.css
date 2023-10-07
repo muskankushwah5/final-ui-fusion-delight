@@ -1,0 +1,19 @@
+#my-cart-table .table th,
+#my-cart-table .table td {
+    vertical-align: middle;
+}
+
+
+.my-cart-icon {
+    position: fixed;
+    bottom: 17px;
+    left: 37px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: border 0.3s, color 0.3s; /* Add transitions for border and color */
+  }
+  
+  .my-cart-icon.has-items {
+    border: 2px solid orange; /* Change border to orange when hasItems is true */
+  }
+  
