@@ -98,7 +98,7 @@ const MainCourse = ({data , cartItem , setCartItem}) => {
     {data.map((dish,index)=>{
       return <div className="item row align-items-center"  >
       <div className="col-sm-3 pr-5 " style={{marginLeft:"10%",marginRight:"10%",padding:"4%"}}>
-      <div style={{justifyContent:"space-between",display:"flex",flexDirection:"row",paddingRight:"10%",fontSize:"14px"}} className='down'>
+      <div style={{justifyContent:"space-between",display:"flex",flexDirection:"row",paddingRight:"10%",fontSize:"18px"}} className='down'>
       <div><h3 className="item__title">{`${dish.title}${" "}`}</h3></div>
       <div><span className="item__price" >${dish.prize}</span></div>
       </div>
