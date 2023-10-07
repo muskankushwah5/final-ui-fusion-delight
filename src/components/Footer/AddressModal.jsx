@@ -84,7 +84,7 @@ function AddressModal(props) {
           sessionId:session.id
       });
       if(result){
-        localStorage.removeItem("cart");
+        localStorage.setItem("cart","");
         navigate("/user");
       }
       
