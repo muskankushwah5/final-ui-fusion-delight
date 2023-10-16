@@ -19,6 +19,8 @@ function App() {
   }
   const [showModal, setShowModal] = useState(false);
 
+  const [isPickup, setIsPickup] = useState(false);
+
   const [showAddressModal, setShowAddressModal] = useState(false);
 
   const [cartItem , setCartItem] = useState([]);
@@ -31,7 +33,8 @@ function App() {
     setShowModal(false);
   };
 
-  const checkoutWithCartHandler = ()=>{
+  const checkoutWithCartHandler = (val)=>{
+    setIsPickup(val);
     setShowAddressModal(true);
   }
 
@@ -59,6 +62,7 @@ function App() {
           cartItem= {cartItem} 
           setCartItem={setCartItem}
           show={showModal}
+          setIsPickup = {setIsPickup}
           handleClose={handleCloseModal}
           checkoutWithCartHandler={checkoutWithCartHandler}
           title="My Modal"
@@ -67,6 +71,7 @@ function App() {
       )}
       {showAddressModal && (
         <AddressModal
+         isPickup = {isPickup}
           show={showAddressModal}
           handleClose={handleAddressCloseModal}
           title="My Modal"

@@ -20,6 +20,7 @@ const UserPage = () => {
  const [orderData, setOrderData] = useState([]);
  const [pastOrder, setPastOrder] = useState([]);
  const [currentOrder, setCurrentOrder] = useState([]);
+ const [pickup, setPickup] = useState([]);
   const [reservationData, setReservationData] = useState([]);
 
   useEffect(()=>{
@@ -27,6 +28,7 @@ const UserPage = () => {
       const response = specificOrderHandler(userData.email)
       .then((res)=>{
       setOrderData(res.data);
+      console.log(res.data);
       const tempPastOrder =  res.data.filter((order,index)=>{
         if(order.orderStatus === "delivered")
          return true
@@ -34,6 +36,14 @@ const UserPage = () => {
       toast.dismiss();
 
       setPastOrder(tempPastOrder);
+
+      const temppickup =  res.data.filter((order,index)=>{
+        if(order.address === "undefined undefined undefined undefined")
+         return true
+      });
+      toast.dismiss();
+
+      setPickup(temppickup);
       const tempCurrentOrder = res.data.filter((order,index)=>{
         if(order.orderStatus !== "delivered")
          return true
@@ -128,6 +138,23 @@ const UserPage = () => {
               ))}
             </ul>
           </section>
+
+          <section className="order-section">
+          <h3> Pickup</h3>
+          <ul>
+            {pickup?.map((order) => (
+             <div className='sub-section'>
+              <li key={order._id}>
+              <div>{order._id}</div>
+                <div>${order.totalPrize}</div>
+                <div className='user-specific-button'>
+                <button ><a href={`/order/${order._id}`}>View</a></button>
+                </div>
+              </li>
+              </div>
+            ))}
+          </ul>
+        </section>
         </div>
       </div>
       <Footer />

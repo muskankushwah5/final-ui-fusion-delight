@@ -44,10 +44,9 @@ const StripeButton = ({totalAmount}) => {
     <StripeCheckout
       label="Pay with Stripe"
       name="Fusion Delight"
-      description={getDescriptionString()} // Pass the formatted string
       amount={totalAmount } // Amount in cents
       token={onToken}
-      currency="INR"
+      currency="USD"
       stripeKey={publishableKey}
     />
   );

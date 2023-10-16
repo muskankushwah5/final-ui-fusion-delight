@@ -2,7 +2,7 @@ import React from 'react';
 
 function CartIcon({ cartItem }) {
   // Check if cartItem length is greater than 0
-  const hasItems = (JSON.parse(localStorage.getItem("cart")));
+  // const hasItems = (JSON.parse(localStorage.getItem("cart")));
 
   return (
     <div

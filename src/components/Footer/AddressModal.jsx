@@ -9,13 +9,22 @@ import { useNavigate } from 'react-router';
 
 function AddressModal(props) {
 
-  const { show, handleClose, stripe } = props;
+  const { show, handleClose, stripe , isPickup } = props;
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
+  const userData = useState(JSON.parse(localStorage.getItem("user")));
+  
   const [address, setAddress] = useState(cart?.address || "");
+
+  const [showToggle, setShowToggle] = useState(false);
+
+  const handleToggleForm = () => {
+    setShowToggle(!showToggle);
+  };
 
   const laneRef = useRef("");
   const areaRef = useRef("");
   const cityRef = useRef("");
+  const phoneRef = useRef(userData.phone || "");
   const zipcodeRef = useRef("");
 
   const [showForm , setShowForm] = useState(false);
@@ -45,22 +54,30 @@ function AddressModal(props) {
       const area = areaRef.current.value;
       const city = cityRef.current.value;
       const zipcode = zipcodeRef.current.value;
+      const phone = phoneRef.current.value;
 
       const enteredAddress = `${laneRef.current.value} ${areaRef.current.value} ${cityRef.current.value} ${zipcodeRef.current.value}`;
       const user = (JSON.parse(localStorage.getItem("user")));
-    if(enteredAddress === "" || user.address === ""){
-      toast.error("Address needed to be provided!");
-    }
-    if(!lane || !area || !city || !zipcode){
-      toast.error("All address fields must be filled");
-    }
+    
+      if((enteredAddress === "" || user.address === "") && isPickup){
+        toast.error("Address needed to be provided!");
+      }
+      if((!lane || !area || !city || !zipcode) && !isPickup){
+        toast.error("All address fields must be filled");
+      }
+    
+      if((phone === "") && isPickup){
+        toast.error("Number needed to be provided!");
+      }
+    
     else{
     
       const payload = {
         email : user.email,
-        phone : user.phone,
+        phone : phoneRef.current.value ? phoneRef.current.value : user.phone,
         address : enteredAddress !== ""? enteredAddress : user.address,
         totalPrize : total,
+        isOrder : !isPickup,
         foodDescription : cart
       }
       const body = {
@@ -84,7 +101,7 @@ function AddressModal(props) {
           sessionId:session.id
       });
       if(result){
-        localStorage.setItem("cart","");
+        localStorage.setItem("cart",[]);
         navigate("/user");
       }
       
@@ -100,15 +117,23 @@ function AddressModal(props) {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header modal-div">
           <h2>Your Address</h2>
+         
+          <span className="close" onClick={handleClose}>
+            &times;
+          </span>
           <span className="close" onClick={handleClose}>&times;</span>
         </div>
         <div style={{ borderWidth: "1px", borderColor: "gray", borderStyle: "solid" }}></div>
         <div className='alert-success'>Provide the address </div>
         <div className="modal-body-input" style={{ borderTopWidth: "1px", borderTopColor: "gray", borderTopStyle: "solid", width: "auto", textAlign: "center" }}>
-          <input ref={laneRef} placeholder={ 'Lane No'} onChange={handleInputHandler} aria-label='lane'/>
+          {isPickup === false && (<><input ref={laneRef} placeholder={ 'Lane No'} onChange={handleInputHandler} aria-label='lane'/>
+          <input ref={zipcodeRef} placeholder={ 'ZipCode'} onChange={handleInputHandler} />
           <input ref={areaRef} placeholder={ 'Area'} onChange={handleInputHandler} />
           <input ref={cityRef} placeholder={ 'City'} onChange={handleInputHandler} />
-          <input ref={zipcodeRef} placeholder={ 'ZipCode'} onChange={handleInputHandler} />
+          </>)}
+          
+          { isPickup === true && (<input ref={phoneRef} placeholder={userData.phone ? userData.phone : "Phone Number"} onChange={handleInputHandler} aria-label='lane'/>
+          )}
         </div>
        
        

@@ -15,13 +15,13 @@ function Hero1() {
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-offset="0" style={{color:"orangered"}}>
-          Fusion Delights
+          Thai Buddha
         </h1>
         <p className="lead text-white"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="600">
-         Enjoy the food !!
+          Experience the Exquisite Flavors of Thailand, Right at Your Table!
         </p>
         <div className="lines" data-aos="fade-up"
             data-aos-duration="1000"

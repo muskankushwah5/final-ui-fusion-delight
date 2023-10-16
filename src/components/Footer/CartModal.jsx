@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import "../../App.css";
 import "./CartModal.css";
 function Modal(props) {
-  const { show, handleClose,checkoutWithCartHandler, title, content } = props; 
-  const [cart , setCart] = useState((JSON.parse(localStorage.getItem("cart"))) || null);
+  const { show, handleClose,checkoutWithCartHandler, title, content  , setIsPickup} = props; 
+  const [cart , setCart] = useState((JSON.parse(localStorage.getItem("cart"))) || {});
   const [totalPrize , setTotalPrize] = useState(0);
 
   useEffect(()=>{
@@ -52,7 +52,7 @@ function Modal(props) {
           <span className="close" onClick={handleClose}>&times;</span>
         </div>
         <div className="modal-content-main-div" style={{borderWidth:"1px",borderColor:"gray",borderStyle:"solid"}}></div>
-        { !cart ? 
+        {  cart === false ? 
           <div className='alert-danger'>Your Cart is Empty</div>
          : 
          <div><div className='alert-success'>Your Cart </div>  
@@ -85,8 +85,8 @@ function Modal(props) {
         </div>}
         <div style={{borderWidth:"1px",borderColor:"gray",borderStyle:"solid"}}></div>
         <div className='modal-button-div'>
-            <button className='modal-button' onClick={handleClose}>Cancel</button>
-            <button className='modal-button-checkout modal-button' onClick={checkoutWithCartHandler} disabled={!cart}>Checkout</button>
+            <button className='modal-button' onClick={()=>checkoutWithCartHandler(true)}>Pickup Order</button>
+            <button className='modal-button-checkout modal-button' onClick={()=>checkoutWithCartHandler(false)} disabled={!cart}>Home Delivery</button>
         </div>
       </div>
     </div>

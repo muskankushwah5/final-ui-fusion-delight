@@ -58,6 +58,7 @@ const OrderPage = () => {
     <div className="order-image" style={{width:"100%",height:"100%"}}>
     
     <h2 style={{color:"orangered"}}>{data.orderStatus}</h2>
+    {data.address === "undefined undefined undefined undefined" && (<h2 style={{color:"orangered"}}>PickUp Order</h2>)}
      <h1 style={{color:"green"}}>Total Prize : ${data.totalPrize}</h1>
     </div>
     {data?.deliveryInfo  ===true && (<div className="order-details">
