@@ -29,9 +29,21 @@
   
   .hide{
     display: block;
+    max-width: 1000%;
   }
   
+  .hide img{
+    max-width: 1100%;
+  }
+
+  .hide-false{
+    display: none;
+  }
   @media screen and (max-width : 768px) {
+
+    .hide-false{
+      display: block;
+    }
     .navbar-user-icon-div{
       display: none;
     }
@@ -44,7 +56,9 @@
     }
   }
   .navbar-logo img {
-    max-width: 100%;
+    max-width: 400%;
+    border-radius: 50%;
+    padding:  4%;
   }
   
   .navbar-links {
@@ -123,8 +137,6 @@
   .image-userprofile-div-sub{
     background-color: white;
     color: black;
-    width: 90%;
-    height: 80%;
     border: none !important;
   }
 
@@ -158,7 +170,7 @@
       }   
 
       .navbar-logo img {
-        max-width: 50%;
+        max-width: 80%;
       }
       
       .welcome-nav-link {

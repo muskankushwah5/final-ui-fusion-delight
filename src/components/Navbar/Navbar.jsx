@@ -20,7 +20,7 @@ function Navbar() {
       <nav className="navbar">
       
         <div ><div style={{left:"40%" }} className="" onClick={toggleMobileMenu}>
-          <img src='./img/bar.png'/>
+          <img src='https://th.bing.com/th/id/OIP.wcIsQYyRoMCA1tCMj0TScQHaHa?w=205&h=205&c=7&r=0&o=5&dpr=1.1&pid=1.7'/>
         </div>
         </div>
         <div className="navbar-logo">
@@ -61,7 +61,7 @@ function Navbar() {
           </ul>
          
         </div>
-        <div style={{width:"150%",height:"150%"}} className='hide'>
+        <div  className='hide'>
          <UserProfile/>
         </div>
       </nav>
