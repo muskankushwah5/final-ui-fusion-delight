@@ -124,7 +124,7 @@ function UserProfileModal(props) {
           <label htmlFor="profile-image-upload" className="profile-image-upload-label">
           
             <img
-              src={!edit ? userData.profileImage : file ?  file : userData.profileImage ? userData.profileImage : './img/placeholder.jpg'}
+              src={!edit ? userData?.profileImage : file ?  file : userData?.profileImage ? userData.profileImage : './img/placeholder.jpg'}
               alt="User Profile"
               className="profile-image profil`e-icon-img"
             />

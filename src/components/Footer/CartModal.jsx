@@ -4,7 +4,7 @@ import "../../App.css";
 import "./CartModal.css";
 function Modal(props) {
   const { show, handleClose,checkoutWithCartHandler, title, content  , setIsPickup} = props; 
-  const [cart , setCart] = useState((JSON.parse(localStorage.getItem("cart"))) || {});
+  const [cart , setCart] = useState((JSON.parse(localStorage.getItem("cart"))) );
   const [totalPrize , setTotalPrize] = useState(0);
 
   useEffect(()=>{
@@ -15,7 +15,6 @@ function Modal(props) {
     setTotalPrize(temp);
 
   },[cart]);
-  console.log(cart,"cart");
   const handleDecrease = (idx)=>{
     const temp = cart.filter((item,index)=>{
       if(index === idx){
@@ -44,6 +43,7 @@ function Modal(props) {
     setCart(temp);
   } 
 
+
   return (
     <div className={`modal ${show ? 'show' : ''}`} onClick={handleClose}>
       <div className='modal-content' onClick={(e) => e.stopPropagation()}>
@@ -52,7 +52,7 @@ function Modal(props) {
           <span className="close" onClick={handleClose}>&times;</span>
         </div>
         <div className="modal-content-main-div" style={{borderWidth:"1px",borderColor:"gray",borderStyle:"solid"}}></div>
-        {  cart === false ? 
+        {  cart === 'undefined' ? 
           <div className='alert-danger'>Your Cart is Empty</div>
          : 
          <div><div className='alert-success'>Your Cart </div>  

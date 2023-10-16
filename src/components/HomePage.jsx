@@ -14,9 +14,7 @@ function App() {
   
   const navigate = useNavigate();
   const userData = (JSON.parse(localStorage.getItem("user")));
-  if(!userData){
-    navigate("/login");
-  }
+   
   const [showModal, setShowModal] = useState(false);
 
   const [isPickup, setIsPickup] = useState(false);
@@ -34,6 +32,9 @@ function App() {
   };
 
   const checkoutWithCartHandler = (val)=>{
+    if(!userData){
+      navigate("/login");
+    }
     setIsPickup(val);
     setShowAddressModal(true);
   }

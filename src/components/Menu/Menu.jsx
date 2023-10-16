@@ -23,7 +23,6 @@ function MenuComponent({cartItem , setCartItem}) {
   useEffect(()=>{
     const getData = async ()=>{
       try{
-        toast.loading("Loading the main Course Dishes");
           const response = await allDishesHandler(cuisineType);
           toast.dismiss();
           if(response){

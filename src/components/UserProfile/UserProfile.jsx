@@ -19,7 +19,7 @@ const UserProfile = () => {
     return (
       <div className="">
         <div className="" onClick={openModal} style={{width:"100%"}} >
-          <img style={{borderRadius:"50%",width:"100px"}}  src={ userData.profileImage ? `${userData.profileImage}` : "./img/placeholder.jpg"} alt="User Profile" />
+          <img style={{borderRadius:"50%",width:"100px"}}  src={ userData?.profileImage ? `${userData?.profileImage}` : "./img/placeholder.jpg"} alt="User Profile" />
       </div>
       {isModalOpen && (
         <Modal

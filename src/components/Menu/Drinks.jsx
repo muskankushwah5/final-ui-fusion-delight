@@ -9,9 +9,7 @@ const Drinks = ({data , cartItem , setCartItem}) => {
 
   const navigate = useNavigate();
   const userData = (JSON.parse(localStorage.getItem("user")));
-  if(!userData){
-    navigate("/login");
-  }
+ 
   const [addedToCart,setAddedToCart] = useState(false);
 
   const [selectedChoice ,setSelectedChoice] = useState({

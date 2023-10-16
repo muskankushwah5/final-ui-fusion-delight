@@ -19,7 +19,7 @@ function Footer({hideCart,setShowModal}) {
       )}
       <p 
         className='copyright'
-      >&copy; <a href="https://bootstrapstarter.com/bootstrap-templates/template-fooddelivery-bootstrap-html/">All Rights are reserved </a> Fushion Delights</p>
+      >&copy; <a href="https://bootstrapstarter.com/bootstrap-templates/template-fooddelivery-bootstrap-html/">All Rights are reserved </a> Thai buddha</p>
       </footer>
       </div>
     );

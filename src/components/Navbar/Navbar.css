@@ -141,9 +141,21 @@
   }
 
 
+  .hide-menu{
+    display: none;
+  }
+
+  .hide-menu img{
+    
+    border-radius: 50%;
+  }
   
  /* Media query for mobile responsiveness */
 @media (max-width: 768px) {
+
+  .hide-menu{
+    display: block;
+  }
     .mobile-menu-icon {
       display: flex;
       color: black;
@@ -210,7 +222,7 @@
       padding: 0.5rem;
       background-color: black;
       color: aliceblue;
-      width: 100%;
+      width: 200%;
     }
   }
 

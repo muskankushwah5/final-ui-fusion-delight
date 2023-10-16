@@ -21,6 +21,14 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           {/* Public routes (e.g., login, forgot password) */}
+          <Route
+          path="/"
+          element={
+            
+              <HomePage />
+          }
+        />
+
           <Route path="/login" element={<SignInSide />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
 
@@ -66,17 +74,8 @@ const App = () => {
             }
           />
 
-          <Route
-            path="/"
-            element={
-              <PrivateRouteWrapper>
-                <HomePage />
-              </PrivateRouteWrapper>
-            }
-          />
+         
 
-
-          {/* Public homepage route */}
           <Route path="/login" element={<SignInSide />} />
         </Routes>
       </BrowserRouter>

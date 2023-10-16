@@ -19,15 +19,23 @@ function Navbar() {
     <div className="navbar-box">
       <nav className="navbar">
       
-        <div ><div style={{left:"40%" }} className="" onClick={toggleMobileMenu}>
+        { <div className='hide-menu'>
+          <div  className="" onClick={toggleMobileMenu}>
           <img src='https://th.bing.com/th/id/OIP.wcIsQYyRoMCA1tCMj0TScQHaHa?w=205&h=205&c=7&r=0&o=5&dpr=1.1&pid=1.7'/>
         </div>
-        </div>
-        <div className="navbar-logo">
+        </div>}
+        {userData && <div className="navbar-logo">
           <a href="/">
             <img src={ "./img/new_logo_image.png"} alt="Logo"/>
           </a>
-        </div>
+        </div>}
+
+        {!userData && <div className="navbar-logo-start">
+          <a href="/">
+            <img src={ "./img/new_logo_image.png"} alt="Logo"/>
+          </a>
+        </div>}
+
         <div className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
           <ul className="navbar-ul">
            {userData && ( <li className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
@@ -55,15 +63,16 @@ function Navbar() {
                 Profile
               </a>
             </li>)}
-            <li className='image-userprofile-div'>
+           { userData &&  <li className='image-userprofile-div'>
             <UserProfile/>
                </li>
+           }
           </ul>
          
         </div>
-        <div  className='hide'>
+        {userData && <div  className='hide'>
          <UserProfile/>
-        </div>
+        </div>}
       </nav>
      
     </div>
