@@ -9,7 +9,7 @@ function Hero1() {
   }, []);
 
   return (
-    <div className="block hero1 my-auto" style={{ backgroundImage: 'url(https://c0.wallpaperflare.com/preview/245/481/204/bakery-signage-at-night.jpg)' }}>
+    <div className="block hero1 my-auto" style={{ backgroundImage: 'url(https://images.pexels.com/photos/460537/pexels-photo-460537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)' }}>
       <div className="container-fluid text-center">
         <h1 className="display-2 text-white"
           data-aos="fade-up"
