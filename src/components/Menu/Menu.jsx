@@ -96,7 +96,7 @@ function MenuComponent({cartItem , setCartItem}) {
         </select>
         <div class="select-arrow"><span className='select-arrow'>&#9660;</span></div>
       </div>
-      <div className="buttons-container"> 
+   {/*}   <div className="buttons-container"> 
       <button  className="button button--is-active" data-target="pizzaMenu" style={{borderWidth:"0px"}}
       onClick={()=>chnageHandler("main")}>
           Main Course
@@ -109,8 +109,8 @@ function MenuComponent({cartItem , setCartItem}) {
         onClick={()=>chnageHandler("drinks")}>
           Drinks
         </button>
-      </div>
-      {String(dishType) === "main" ? <MainCourse data={mainCourse} cartItem={cartItem} setCartItem={setCartItem}/>
+  </div>*/}
+      {String(dishType) === "main" ? <MainCourse data={data} cartItem={cartItem} setCartItem={setCartItem}/>
        : String(dishType) === "starter" ? <Starter data={starter} cartItem={cartItem} setCartItem={setCartItem}/> 
        : <Drinks data={drinks} cartItem={cartItem} setCartItem={setCartItem}/>}
     </div>
